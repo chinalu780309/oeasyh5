@@ -2,12 +2,111 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <script type="text/javascript">
-        alert("test1")
-    </script>
+    <title>旋转框</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url("image/bac.jpg") no-repeat;
+            background-size: cover;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            perspective: 5000px;
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            margin-left: -50px;
+            transform: rotateX(-10deg);
+        }
+        ul{
+            background-size: cover;
+            perspective: -1000px;
+            transform-style: preserve-3d;
+            width: 100px;
+            height: 100px;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: change 6s linear 0s infinite normal;
+        }
+        ul li{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            line-height: 300px;
+            font-size: 60px;
+            text-align: center;
+        }
+        ul li img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+        ul li:nth-of-type(1){
+            transform: rotateY(60deg) translateZ(100px);
+            background-color: black;
+        }
+        ul li:nth-of-type(2){
+            transform: rotateY(120deg) translateZ(100px);
+            background-color: black;
+        }
+        ul li:nth-of-type(3){
+            transform: rotateY(180deg) translateZ(100px);
+            background-color: black;
+        }
+        ul li:nth-of-type(4){
+            transform: rotateY(240deg) translateZ(100px);
+            background-color: black;
+        }
+        ul li:nth-of-type(5){
+            transform: rotateY(300deg) translateZ(100px);
+            background-color: black;
+        }
+        ul li:nth-of-type(6){
+            transform: rotateY(360deg) translateZ(100px);
+            background-color: black;
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul:hover li{
+            opacity:0.3;
+        }
+        ul li:hover{
+            opacity: 1;
+        }
+        @keyframes change {
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(-360deg);
+            }
+        }
+    </style>
 </head>
 <body>
-
+<div class="box1">
+    <ul>
+    <li><img src="image/liu1.jpg" alt=""/></li>
+    <li><img src="image/liu2.jpg" alt=""/></li>
+    <li><img src="image/liu4.jpg" alt=""/></li>
+    <li><img src="image/liu5.jpg" alt=""/></li>
+    <li><img src="image/liu6.jpg" alt=""/></li>
+    <li><img src="image/girl.jpeg" alt=""/></li>
+</ul>
+</div>
 </body>
 </html>
